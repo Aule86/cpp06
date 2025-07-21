@@ -1,11 +1,11 @@
-NAME = ScalarConverter
+NAME = Serializer
 
 CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -I./
 
 SRCS =	main.cpp \
-		ScalarConverter.cpp \
+		Serializer.cpp \
 		
 		
 

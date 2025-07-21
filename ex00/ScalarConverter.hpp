@@ -19,22 +19,23 @@ class ScalarConverter
 
     public:
         ~ScalarConverter();
-        static void convert(std::string input);
+		static void	convert(std::string input);
 
-        class NonDisplayable: public std::exception
-        {
-            public:
-                virtual const char *what() const throw
-                {
-                    return ("Non Displayable");
-                }
-        };
-        class Imposible: public std::exception
-        {
-            public:
-                virtual const char *what() const throw
-                {
-                    return ("Imposible");
-                }
-        };
+		class NonDisplayable : public std::exception
+		{
+			public:
+				virtual const char *what() const throw()
+				{
+					return ("Non displayable");
+				}
+		};
+
+		class Impossible : public std::exception
+		{
+			public:
+				virtual const char *what() const throw()
+				{
+					return ("Impossible");
+				}
+		};
 };
