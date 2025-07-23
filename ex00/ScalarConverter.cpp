@@ -29,6 +29,32 @@ bool PseudoNb(const std::string str)
 	return false;
 }
 
+void	printPseudo(std::string input)
+{
+	if (PseudoNb(input)) {
+		std::cout << "char: " << "impossible" << "\n";
+		std::cout << "int: " << "impossible" << "\n";
+		std::cout << "float: " << ((input[input.size() - 1] == 'f') ? input : (input + 'f')) << std::endl;
+		std::cout << "double: " << input << "\n";
+	}
+}
+
+void	ScalarConverter::convert(std::string input)
+{
+	if (!input.length()) {
+		std::cout << "Empty input" << std::endl;
+		return ;
+	}
+	if (PseudoNb(input)) {
+		printPseudo(input);
+		return ;
+	}
+	ScalarConverter::toChar(input);
+	ScalarConverter::toInt(input);
+	ScalarConverter::toFloat(input);
+	ScalarConverter::toDouble(input);
+}
+
 void ScalarConverter::toChar(std::string input)
 {
 	std::cout << "char: ";
